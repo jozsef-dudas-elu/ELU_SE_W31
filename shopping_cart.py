@@ -1,12 +1,12 @@
-def CalculateTotal(cart):
+def calculate_total(cart):
     total = 0
     for item in cart:
-        total += item['price']
+        total += float(item['price'])
     return total
 
 
 def display_total(Total):
-    print("Total price: " + Total)
+    print("Total price: " + str(Total))
 
 
 CART = [
@@ -18,5 +18,6 @@ CART = [
 for item in CART:
     print(f"Item: {item['name']} - Price: ${item['price']}")
 
-shopping_cart_total = CalculateTotal(CART)
-display_total(shopping_cart_total)
+if __name__ == '__main__':
+    shopping_cart_total = calculate_total(CART)
+    display_total(shopping_cart_total)
