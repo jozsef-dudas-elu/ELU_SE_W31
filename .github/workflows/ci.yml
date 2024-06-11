@@ -1,0 +1,32 @@
+name: Static Analysis using Flake8
+
+on: 
+  push:
+    branches: 
+      - main
+
+jobs:
+  static-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Check out the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Set up Python environment
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    # Install dependencies
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8
+
+    # Run flake8 on the shopping_cart.py script
+    - name: Run static analysis
+      run: |
+        flake8 shopping_cart.py
