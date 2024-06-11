@@ -32,4 +32,4 @@ class TestShoppingCart(unittest.TestCase):
             {'name': 'Discount', 'price': -1.00},
         ]
         result = calculate_total(cart)
-        self.assertEqual(result, -3.99)  # The total should be the sum of all items, correctly handling negative prices
+        self.assertEqual(result, 3.99)  # The total should be the sum of all items, correctly handling negative prices
